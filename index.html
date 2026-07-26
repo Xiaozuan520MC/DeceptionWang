@@ -850,6 +850,15 @@
       gap: 16px;
       position: relative;
     }
+    /* CTA 按钮调小，移除 btn-lg 改用常规尺寸 */
+    .cta .btn {
+      padding: 12px 28px;
+      font-size: 0.9rem;
+    }
+    .cta .btn svg {
+      width: 18px;
+      height: 18px;
+    }
     .footer {
       border-top: 1px solid rgba(139, 95, 207, 0.03);
       padding: 32px 0 24px;
@@ -976,6 +985,10 @@
       }
       .cta h2 {
         font-size: 1.8rem;
+      }
+      .cta .btn {
+        padding: 10px 22px;
+        font-size: 0.85rem;
       }
       .btn-lg {
         padding: 14px 32px;
@@ -1302,14 +1315,14 @@
         <p data-i18n="cta.desc">适用于 Minecraft 1.8.9 · 安全暴力 · 免费开源</p>
         <div class="btn-group">
           <span class="magnet-container" data-magnet-strength="18">
-            <a href="https://github.com/Xiaozuan520MC/DeceptionClient/releases" target="_blank" class="btn btn-primary btn-lg">
+            <a href="https://github.com/Xiaozuan520MC/DeceptionClient/releases" target="_blank" class="btn btn-primary">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               <span data-i18n="cta.downloadBtn">下载 Mod</span>
               <span class="shine"></span>
             </a>
           </span>
           <span class="magnet-container" data-magnet-strength="14">
-            <a href="https://github.com/Xiaozuan520MC/DeceptionClient" target="_blank" class="btn btn-secondary btn-lg">
+            <a href="https://github.com/Xiaozuan520MC/DeceptionClient" target="_blank" class="btn btn-secondary">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               <span data-i18n="cta.githubBtn">GitHub 仓库</span>
             </a>
@@ -1590,7 +1603,6 @@
           }
         }
       });
-      // 更新高亮文本的 data-text 属性，用于玻璃效果
       document.querySelectorAll('.highlight.glass-text').forEach(el => {
         const key = el.dataset.i18n;
         if (translations[lang] && translations[lang][key]) {
@@ -1608,7 +1620,6 @@
       });
     });
 
-    // 默认英文
     setLanguage('en');
   </script>
 
